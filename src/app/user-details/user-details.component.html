@@ -1,0 +1,40 @@
+<div class="user-area">
+
+  <div class="user-header">
+    {{user?.name}} profile
+  </div>
+
+
+  <div class="user-info">
+
+    <div class="user-info__avatar">
+      <img [src]="user?.avatarUrl || ''" class="user-avatar "/>
+    </div>
+    <div class="user-info__data">
+      <mat-tab-group>
+        <mat-tab label="Repositories: {{user?.repositories?.totalCount}}">
+          <div class="user-repositories">
+            <ul>
+              <li *ngFor="let rep of user?.repositories?.nodes" [routerLink]="['/repository', user.login, rep.name]">{{rep.name}}</li>
+            </ul>
+          </div>
+        </mat-tab>
+        <mat-tab label="Followers: {{user?.followers?.totalCount}}">
+          Content 2
+        </mat-tab>
+        <mat-tab label="Following: {{user?.following?.totalCount}}">
+          Content 1
+        </mat-tab>
+        <mat-tab label="Stars: {{user?.starredRepositories?.totalCount}}">
+          Content 2
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,27 @@
+<button mat-button (click)="back()">Back</button>
+
+<mat-tab-group>
+  <mat-tab label="Issues: {{repository?.issues?.totalCount}}">
+    <div>
+      <p>{{repository?.issues?.edges[0]?.node?.title}}</p>
+    </div>
+    Comments
+    <li *ngFor="let comment of repository?.issues?.edges[0]?.node?.comments?.edges">
+      {{comment?.node.body}}
+      |
+      Total: {{comment?.node?.reactions?.totalCount}}
+      <span class="pointer" (click)="addReaction('LAUGH', comment?.node.id)">😄</span>
+      <span class="pointer" (click)="addReaction('HOORAY', comment?.node.id)">🎉</span>
+      <span class="pointer" (click)="addReaction('CONFUSED', comment?.node.id)">😕</span>
+      <span class="pointer" (click)="addReaction('HEART', comment?.node.id)">❤</span>
+      <span class="pointer" (click)="addReaction('THUMBS_UP', comment?.node.id)">👍</span>
+      <span class="pointer" (click)="addReaction('THUMBS_DOWN', comment?.node.id)">👎</span>
+    </li>
+  </mat-tab>
+  <mat-tab label="Pull requests: {{repository?.pullRequests?.totalCount}}">
+    Content 2
+  </mat-tab>
+</mat-tab-group>
+
+
+

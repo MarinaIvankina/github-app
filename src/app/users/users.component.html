@@ -1,0 +1,15 @@
+<div class="usersList">
+  <div *ngFor="let user of users?.edges" [routerLink]="['/user', user.node.login]" style="display: inline" class="user-item">
+    <div>
+      <span>Name: {{user.node?.name}}</span>
+      <br/>
+      <span>Login: {{user.node?.login}}</span>
+      <br/>
+      <span>Location: {{user.node.location}}</span>
+    </div>
+    <div>
+      <img [src]="user.node?.avatarUrl" width="100px" height="100px"/>
+    </div>
+  </div>
+</div>
+

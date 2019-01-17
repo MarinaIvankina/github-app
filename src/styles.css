@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-size: 24px;
+  font-family: "Century Gothic", sans-serif;
+}
+
+.usersList{
+  display: flex;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.user-item{
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+
+.header {
+  display: block;
+  background-color: #3c4146;
+  color: white;
+  font-size: 24px;
+  padding: 0 30px;
+}
+
+.mat-tab-links .mat-tab-link {
+  color: black;
+  font-weight: bold;
+}
+
+
+/*start BEM*/
+.user-area {
+  padding: 0 30px;
+  /*border: solid 1px black;*/
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-info__avatar {
+  width: 10%;
+}
+
+.user-info__data {
+  width: 70%;
+}
+
+.user-header{
+  padding: 30px 0;
+}
+
+.user-info__data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+/*end BEM*/
+.user-avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.mat-tab-label, .mat-tab-link {
+  font-size: 24px;
+  font-family: "Century Gothic", sans-serif;
+  color: #000;
+}
